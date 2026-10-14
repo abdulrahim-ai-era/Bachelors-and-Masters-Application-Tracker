@@ -1,0 +1,286 @@
+import { School, Requirement, Recommender, Funding, UserSettings, ActivityLog } from '../types';
+
+export const initialSettings: UserSettings = {
+  applicantName: '',
+  targetDegree: "Master's",
+  homeCountry: '',
+  currency: '$',
+  targetIntake: 'Fall 2026',
+};
+
+export const sampleSchools: School[] = [
+  {
+    id: 'school-1',
+    name: 'Stanford University',
+    program: 'MS Computer Science (AI Track)',
+    degreeType: "Master's",
+    country: 'United States',
+    countryCode: 'US',
+    deadline: '2026-01-15',
+    status: 'Accepted',
+    applicationFee: 140,
+    portalUrl: 'https://gradadmissions.stanford.edu',
+    notes: 'Faculty interview completed in December. Top choice for natural language processing & foundation models research.',
+    ranking: 1,
+    createdAt: '2025-09-01T10:00:00Z',
+    updatedAt: '2025-12-28T14:30:00Z',
+  },
+  {
+    id: 'school-2',
+    name: 'MIT - Massachusetts Institute of Technology',
+    program: 'MS in Artificial Intelligence & Decision Making',
+    degreeType: "Master's",
+    country: 'United States',
+    countryCode: 'US',
+    deadline: '2026-01-10',
+    status: 'In Progress',
+    applicationFee: 150,
+    portalUrl: 'https://gradapply.mit.edu',
+    notes: 'Submitted video statement. Pending departmental review and fellowship consideration.',
+    ranking: 2,
+    createdAt: '2025-09-05T11:00:00Z',
+    updatedAt: '2025-12-18T09:15:00Z',
+  },
+  {
+    id: 'school-3',
+    name: 'University of Oxford',
+    program: 'MSc in Advanced Computer Science & Data',
+    degreeType: "Master's",
+    country: 'United Kingdom',
+    countryCode: 'GB',
+    deadline: '2025-12-20',
+    status: 'Submitted',
+    applicationFee: 105,
+    portalUrl: 'https://ox.ac.uk/admissions/graduate',
+    notes: 'Clarendon Fund scholarship consideration requested. All transcripts verified by department.',
+    ranking: 3,
+    createdAt: '2025-09-12T15:20:00Z',
+    updatedAt: '2025-12-19T18:00:00Z',
+  },
+  {
+    id: 'school-4',
+    name: 'ETH Zurich',
+    program: 'MSc in Computer Science',
+    degreeType: "Master's",
+    country: 'Switzerland',
+    countryCode: 'CH',
+    deadline: '2026-01-12',
+    status: 'In Progress',
+    applicationFee: 165,
+    portalUrl: 'https://e-apply.ethz.ch',
+    notes: 'Excellence Scholarship & Opportunity Programme (ESOP) application submitted along with pre-study plan.',
+    ranking: 7,
+    createdAt: '2025-09-20T12:00:00Z',
+    updatedAt: '2025-12-22T11:45:00Z',
+  },
+  {
+    id: 'school-5',
+    name: 'University of Melbourne',
+    program: 'Master of Information Technology (Cyber Security)',
+    degreeType: "Master's",
+    country: 'Australia',
+    countryCode: 'AU',
+    deadline: '2025-12-15',
+    status: 'Accepted',
+    applicationFee: 100,
+    portalUrl: 'https://study.unimelb.edu.au',
+    notes: 'Offer letter received with International Postgraduate Coursework Award. Decision required by March 15.',
+    ranking: 14,
+    createdAt: '2025-10-01T08:30:00Z',
+    updatedAt: '2025-12-16T16:00:00Z',
+  },
+  {
+    id: 'school-6',
+    name: 'University of Toronto',
+    program: 'MSc in Applied Computing (MScAC)',
+    degreeType: "Master's",
+    country: 'Canada',
+    countryCode: 'CA',
+    deadline: '2026-02-01',
+    status: 'Researching',
+    applicationFee: 130,
+    portalUrl: 'https://sgs.utoronto.ca',
+    notes: 'Strong industry internship program (8-month paid). Reaching out to lab coordinators.',
+    ranking: 18,
+    createdAt: '2025-10-15T14:00:00Z',
+    updatedAt: '2025-11-20T10:00:00Z',
+  }
+];
+
+export const sampleRequirements: Requirement[] = [
+  // Stanford
+  { id: 'req-1', schoolId: 'school-1', name: 'Statement of Purpose (SOP)', status: 'Submitted', notes: '2 pages, focused on deep learning robustness.' },
+  { id: 'req-2', schoolId: 'school-1', name: 'Official Transcripts', status: 'Submitted', notes: 'Verified via Parchment electronic delivery.' },
+  { id: 'req-3', schoolId: 'school-1', name: 'GRE General Scores', status: 'Submitted', notes: 'Q169, V163, AWA 4.5 sent via ETS code 4704.' },
+  { id: 'req-4', schoolId: 'school-1', name: '3 Letters of Recommendation', status: 'Submitted', notes: 'All recommenders submitted on portal.' },
+  { id: 'req-5', schoolId: 'school-1', name: 'Curriculum Vitae (CV)', status: 'Submitted', notes: 'Highlights NeurIPS workshop paper and software internship.' },
+
+  // MIT
+  { id: 'req-6', schoolId: 'school-2', name: 'Statement of Objectives', status: 'Final', notes: 'Focused on multi-agent reinforcement learning.' },
+  { id: 'req-7', schoolId: 'school-2', name: 'Transcripts & GPA Verification', status: 'Final', notes: 'Uploaded unofficial PDF for initial committee review.' },
+  { id: 'req-8', schoolId: 'school-2', name: '3 Letters of Recommendation', status: 'Draft', notes: '2 submitted, awaiting Dr. Chen confirmation.' },
+  { id: 'req-9', schoolId: 'school-2', name: 'Video Statement (60-sec)', status: 'Submitted', notes: 'Uploaded answering why MIT EECS.' },
+
+  // Oxford
+  { id: 'req-10', schoolId: 'school-3', name: 'Statement of Purpose', status: 'Submitted', notes: 'Submitted for Clarendon review.' },
+  { id: 'req-11', schoolId: 'school-3', name: 'Degree Transcripts', status: 'Submitted', notes: 'Certified translation and GPA conversion.' },
+  { id: 'req-12', schoolId: 'school-3', name: 'Academic CV', status: 'Submitted', notes: 'Oxford standard academic format.' },
+  { id: 'req-13', schoolId: 'school-3', name: 'Letters of Reference (3)', status: 'Submitted', notes: 'All references uploaded.' },
+
+  // ETH Zurich
+  { id: 'req-14', schoolId: 'school-4', name: 'Motivation Letter', status: 'Final', notes: 'Mentioned Systems Group & Prof. Alonso.' },
+  { id: 'req-15', schoolId: 'school-4', name: 'Course Description Pre-requisite Syllabus', status: 'Draft', notes: 'Mapping theoretical CS courses to ETH credit criteria.' },
+  { id: 'req-16', schoolId: 'school-4', name: 'GRE General Test', status: 'Submitted', notes: 'Mandatory for non-Bologna degrees.' },
+  { id: 'req-17', schoolId: 'school-4', name: 'Letters of Recommendation (2)', status: 'Not Started', notes: 'Need to send portal invites this week.' },
+
+  // Melbourne
+  { id: 'req-18', schoolId: 'school-5', name: 'Academic Transcripts', status: 'Submitted', notes: 'Authenticated by university registrar.' },
+  { id: 'req-19', schoolId: 'school-5', name: 'English Language Proficiency (IELTS)', status: 'Submitted', notes: 'Overall 8.0 band scored.' },
+  { id: 'req-20', schoolId: 'school-5', name: 'Statement of Intent', status: 'Submitted', notes: 'Outlining cyber security focus.' },
+
+  // Toronto
+  { id: 'req-21', schoolId: 'school-6', name: 'Letter of Intent', status: 'Draft', notes: 'Drafting industrial research alignment.' },
+  { id: 'req-22', schoolId: 'school-6', name: 'Transcripts', status: 'Not Started', notes: 'Order transcript from registrar.' },
+  { id: 'req-23', schoolId: 'school-6', name: '3 Reference Letters', status: 'Not Started', notes: 'Determine third recommender (academic vs industry).' },
+];
+
+export const sampleRecommenders: Recommender[] = [
+  {
+    id: 'rec-1',
+    name: 'Dr. Elena Rostova',
+    email: 'elena.rostova@university.edu',
+    relationship: 'Professor & Thesis Advisor',
+    institution: 'Department of Computer Science',
+    lastContactedDate: '2025-12-10',
+    schoolSubmissions: [
+      { schoolId: 'school-1', status: 'Submitted' },
+      { schoolId: 'school-2', status: 'Submitted' },
+      { schoolId: 'school-3', status: 'Submitted' },
+      { schoolId: 'school-4', status: 'Confirmed' },
+      { schoolId: 'school-6', status: 'Requested' },
+    ],
+  },
+  {
+    id: 'rec-2',
+    name: 'Prof. Marcus Vance',
+    email: 'm.vance@lab.research.org',
+    relationship: 'Principal Research Scientist',
+    institution: 'Applied Intelligence Institute',
+    lastContactedDate: '2025-12-05',
+    schoolSubmissions: [
+      { schoolId: 'school-1', status: 'Submitted' },
+      { schoolId: 'school-2', status: 'Submitted' },
+      { schoolId: 'school-3', status: 'Submitted' },
+      { schoolId: 'school-4', status: 'Requested' },
+    ],
+  },
+  {
+    id: 'rec-3',
+    name: 'Sarah Jenkins',
+    email: 'sjenkins@techfirm.io',
+    relationship: 'Engineering Manager',
+    institution: 'CloudScale Technologies',
+    lastContactedDate: '2025-11-20', // Over 14 days ago - will trigger the reminder flag!
+    schoolSubmissions: [
+      { schoolId: 'school-1', status: 'Submitted' },
+      { schoolId: 'school-2', status: 'Requested' },
+      { schoolId: 'school-5', status: 'Submitted' },
+      { schoolId: 'school-6', status: 'Not Requested' },
+    ],
+  },
+];
+
+export const sampleFunding: Funding[] = [
+  {
+    id: 'fund-1',
+    schoolId: 'school-1',
+    fundingType: 'Assistantship',
+    amountOffered: 54000,
+    tuitionCost: 59000,
+    estimatedCostOfLiving: 24000,
+    notes: '20 hr/week Graduate Research Assistantship (GRA) covering 85% tuition plus monthly stipend.',
+  },
+  {
+    id: 'fund-2',
+    schoolId: 'school-2',
+    fundingType: 'Fellowship',
+    amountOffered: 62000,
+    tuitionCost: 61000,
+    estimatedCostOfLiving: 26000,
+    notes: 'Departmental fellowship nomination pending final dean sign-off.',
+  },
+  {
+    id: 'fund-3',
+    schoolId: 'school-3',
+    fundingType: 'Scholarship',
+    amountOffered: 42000,
+    tuitionCost: 44000,
+    estimatedCostOfLiving: 21000,
+    notes: 'Clarendon Fund partial fee waiver plus department bursary.',
+  },
+  {
+    id: 'fund-4',
+    schoolId: 'school-4',
+    fundingType: 'Fellowship',
+    amountOffered: 36000,
+    tuitionCost: 2000, // Very low Swiss tuition
+    estimatedCostOfLiving: 28000,
+    notes: 'ESOP provides CHF 12,000 per semester plus full tuition waiver.',
+  },
+  {
+    id: 'fund-5',
+    schoolId: 'school-5',
+    fundingType: 'Scholarship',
+    amountOffered: 28000,
+    tuitionCost: 48000,
+    estimatedCostOfLiving: 23000,
+    notes: 'International Postgraduate Coursework Award fee remission.',
+  },
+  {
+    id: 'fund-6',
+    schoolId: 'school-6',
+    fundingType: 'Assistantship',
+    amountOffered: 32000,
+    tuitionCost: 41000,
+    estimatedCostOfLiving: 22000,
+    notes: 'Paid 8-month applied industry research internship component.',
+  },
+];
+
+export const sampleActivityLogs: ActivityLog[] = [
+  {
+    id: 'act-1',
+    timestamp: '2025-12-28T14:30:00Z',
+    type: 'status_change',
+    title: 'Admission Offer Received! 🎉',
+    description: 'Stanford University updated status to Accepted with GRA package.',
+  },
+  {
+    id: 'act-2',
+    timestamp: '2025-12-20T18:00:00Z',
+    type: 'school_added',
+    title: 'Application Submitted',
+    description: 'Submitted complete packet to University of Oxford MSc program.',
+  },
+  {
+    id: 'act-3',
+    timestamp: '2025-12-16T16:00:00Z',
+    type: 'status_change',
+    title: 'Admission Offer Received! 🎉',
+    description: 'University of Melbourne issued official admission letter.',
+  },
+  {
+    id: 'act-4',
+    timestamp: '2025-12-10T09:00:00Z',
+    type: 'recommender_update',
+    title: 'Recommendation Submitted',
+    description: 'Dr. Elena Rostova submitted LOR for Stanford and MIT portals.',
+  },
+  {
+    id: 'act-5',
+    timestamp: '2025-12-05T11:20:00Z',
+    type: 'requirement_update',
+    title: 'Requirement Finalized',
+    description: 'GRE General scores reported to ETS institutions.',
+  },
+];
