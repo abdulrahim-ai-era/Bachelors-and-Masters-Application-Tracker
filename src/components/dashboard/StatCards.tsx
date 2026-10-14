@@ -86,7 +86,7 @@ export const StatCards: React.FC = () => {
         <div
           key={card.id}
           onClick={card.onClick}
-          className={`relative overflow-hidden rounded-2xl border ${card.border} bg-gradient-to-b ${card.bgGrad} p-4 sm:p-5 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl ${card.glow} cursor-pointer group flex flex-col justify-between`}
+          className={`relative overflow-hidden rounded-2xl border ${card.border} bg-gradient-to-b ${card.bgGrad} p-4 sm:p-5 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl ${card.glow} cursor-pointer group flex flex-col justify-between last:col-span-2 sm:last:col-span-1`}
         >
           {/* Subtle light reflection on card top */}
           <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent" />

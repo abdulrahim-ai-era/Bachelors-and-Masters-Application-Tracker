@@ -1,0 +1,43 @@
+# Copyright & Permitted Use License
+
+Copyright (c) 2024-2026 Abdul Rahim. All rights reserved.
+
+Project: GradTrack — Bachelors & Master's Application Tracker
+Author & Creator: Abdul Rahim
+Contact / Inquiries: Via GitHub Repository
+
+===============================================================================
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+===============================================================================
+
+1. OWNERSHIP & COPYRIGHT
+   This entire software, codebase, design, architecture, and associated documentation 
+   are the original intellectual property of Abdul Rahim ("the Author"). 
+   All rights, title, and interest not expressly granted herein are strictly reserved.
+
+2. PERMITTED PERSONAL USE
+   Permission is hereby granted to any individual who obtains a copy of this software 
+   and associated documentation files to:
+   - View, run, deploy, and self-host the application solely for personal, 
+     non-commercial application tracking and educational purposes.
+   - Use the built-in export features (PDF, CSV, JSON) for personal recordkeeping.
+
+3. RESTRICTIONS
+   Under no circumstances is anyone permitted to:
+   - Remove, obscure, or alter the original author's copyright notice, name, branding, 
+     or attribution from this repository, website, source code files, or user interface.
+   - Claim copyright, authorship, or original ownership of this software or any portion thereof.
+   - Sell, resell, rent, lease, sublicense, or monetize this software or any derivative works.
+   - Create, distribute, or publicly host derivative versions of this software with altered 
+     branding or without explicit written permission from Abdul Rahim.
+   - Package this software into a paid SaaS or commercial product.
+
+4. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHOR OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+

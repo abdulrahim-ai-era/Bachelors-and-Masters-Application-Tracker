@@ -118,19 +118,19 @@ export const HeroBanner: React.FC = () => {
             {/* Glowing neon connecting curve line */}
             <div className="absolute top-[26px] left-6 right-6 h-[2px] bg-gradient-to-r from-emerald-500 via-yellow-400 via-cyan-400 via-amber-400 to-amber-300 hidden sm:block opacity-70 shadow-[0_0_12px_rgba(245,158,11,0.5)]" />
 
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-1 relative z-10">
+            <div className="flex sm:grid sm:grid-cols-5 gap-4 sm:gap-1 overflow-x-auto pb-2 sm:pb-0 relative z-10">
               {journeyNodes.map((node) => (
-                <div key={node.id} className="flex flex-col items-center text-center group cursor-pointer">
+                <div key={node.id} className="flex flex-col items-center text-center group cursor-pointer shrink-0 min-w-[74px] sm:min-w-0">
                   {/* Glowing Node Circle */}
                   <div
-                    className={`w-11 h-11 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${node.ring} ${node.glow} group-hover:scale-110 mb-2.5 bg-[#0a1428]`}
+                    className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${node.ring} ${node.glow} group-hover:scale-110 mb-2 bg-[#0a1428]`}
                   >
                     {node.icon}
                   </div>
                   {/* Label */}
-                  <div className="text-xs font-bold text-white tracking-tight">{node.label}</div>
+                  <div className="text-[11px] sm:text-xs font-bold text-white tracking-tight">{node.label}</div>
                   {/* Subtext */}
-                  <div className="text-[10px] text-slate-400 mt-0.5 font-medium">{node.sub}</div>
+                  <div className="text-[9px] sm:text-[10px] text-slate-400 mt-0.5 font-medium">{node.sub}</div>
                 </div>
               ))}
             </div>
@@ -172,7 +172,7 @@ export const HeroBanner: React.FC = () => {
           </div>
 
           {/* Quote Card */}
-          <div className="relative overflow-hidden rounded-2xl p-4 w-52 bg-gradient-to-br from-[#131b2e]/90 to-[#0c1424]/90 border border-amber-400/25 shadow-xl">
+          <div className="hidden sm:block relative overflow-hidden rounded-2xl p-4 w-52 bg-gradient-to-br from-[#131b2e]/90 to-[#0c1424]/90 border border-amber-400/25 shadow-xl">
             <div className="w-7 h-7 rounded-lg bg-amber-400/15 flex items-center justify-center mb-2.5 text-amber-400">
               <GraduationCap className="w-4 h-4" />
             </div>

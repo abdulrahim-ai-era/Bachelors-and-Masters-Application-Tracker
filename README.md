@@ -114,6 +114,19 @@ npm run preview
 
 ---
 
-## 📄 License
+## 👨‍💻 Author & Copyright
 
-Distributed under the **MIT License**. Free for personal and commercial use.
+**Created & Maintained by [Abdul Rahim](https://github.com)**
+
+All original concepts, design architecture, and implementation belong to Abdul Rahim.
+
+---
+
+## 📄 License & Terms of Use
+
+Copyright (c) 2024-2026 **Abdul Rahim**. All rights reserved.
+
+- **Permitted Use:** Anyone is free to visit, clone, self-host, and use this application for personal university and master's application tracking.
+- **Restrictions:** No individual or organization is permitted to claim ownership or copyright, remove the author's attribution, sell, or redistribute modified copies of the proprietary codebase without explicit written permission from Abdul Rahim.
+- Refer to the full [LICENSE](file:///LICENSE) file for complete details.
+

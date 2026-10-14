@@ -58,8 +58,8 @@ const AppContent: React.FC = () => {
       {/* Subtle ambient light spots in top right */}
       <div className="fixed -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle_at_50%_50%,_rgba(59,130,246,0.08)_0%,_transparent_70%)] blur-3xl pointer-events-none z-0" />
 
-      {/* Left Sidebar */}
-      <Sidebar />
+      {/* Left Sidebar (Desktop + Mobile Drawer) */}
+      <Sidebar mobileOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col overflow-hidden relative z-10">
@@ -67,6 +67,18 @@ const AppContent: React.FC = () => {
         <main className="flex-1 overflow-y-auto">
           {renderView()}
         </main>
+        <footer className="shrink-0 py-2 px-4 sm:px-6 border-t border-white/[0.05] bg-[#070b18]/60 backdrop-blur-sm text-[11px] text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-1">
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-slate-400">GradTrack</span>
+            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="hidden sm:inline">Application Management System</span>
+          </div>
+          <div>
+            <span>Created by <strong className="text-amber-400/90 font-medium">Abdul Rahim</strong></span>
+            <span className="text-slate-600 mx-1.5">•</span>
+            <span>All Rights Reserved</span>
+          </div>
+        </footer>
       </div>
 
       {/* Achievement Toast — rendered globally on top of everything */}

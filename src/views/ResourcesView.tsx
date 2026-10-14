@@ -169,7 +169,7 @@ ${settings.applicantName || '[Your Name]'}`,
             </p>
           </div>
 
-          <div className="flex items-center gap-2 bg-[#091122] p-1.5 rounded-2xl border border-white/10 shrink-0">
+          <div className="flex items-center gap-2 bg-[#091122] p-1.5 rounded-2xl border border-white/10 shrink-0 overflow-x-auto max-w-full">
             <button
               onClick={() => setActiveTab('emails')}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${

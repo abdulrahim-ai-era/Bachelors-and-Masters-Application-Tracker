@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, DollarSign, Download, Upload, Trash2, Sparkles, Check, FileText, FileSpreadsheet } from 'lucide-react';
+import { User, DollarSign, Download, Upload, Trash2, Sparkles, Check, FileText, FileSpreadsheet, ShieldCheck } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { DegreeType } from '../types';
 import { ConfirmDialog } from '../components/common/ConfirmDialog';
@@ -256,6 +256,45 @@ export const SettingsView: React.FC = () => {
             </label>
           </div>
         </div>
+      </div>
+
+      {/* Author, Ownership & License Section */}
+      <div className="glass-panel rounded-3xl p-6 border border-amber-400/20 bg-gradient-to-br from-[#0c1326] via-[#09101f] to-[#070b18] shadow-2xl space-y-4">
+        <div className="flex items-center justify-between pb-4 border-b border-white/[0.06]">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-amber-400/15 border border-amber-400/30 flex items-center justify-center text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+              <ShieldCheck className="w-4.5 h-4.5" />
+            </div>
+            <div>
+              <h2 className="text-sm font-bold text-white">Author & Legal Ownership</h2>
+              <p className="text-[11px] text-slate-400">Software license and intellectual property notice</p>
+            </div>
+          </div>
+          <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-bold">
+            Personal Use License
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-xs">
+          <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
+            <span className="text-[10px] text-slate-400 uppercase tracking-wider font-bold block mb-1">Creator & Author</span>
+            <span className="font-extrabold text-white text-sm">Abdul Rahim</span>
+          </div>
+          <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
+            <span className="text-[10px] text-slate-400 uppercase tracking-wider font-bold block mb-1">Copyright</span>
+            <span className="font-semibold text-slate-200">© 2024–2026 Abdul Rahim</span>
+          </div>
+          <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
+            <span className="text-[10px] text-slate-400 uppercase tracking-wider font-bold block mb-1">Usage Rights</span>
+            <span className="font-semibold text-amber-300">Personal & Academic Only</span>
+          </div>
+        </div>
+
+        <p className="text-[11px] text-slate-400 leading-relaxed bg-black/20 p-3.5 rounded-xl border border-white/[0.04]">
+          This software, its design, and its codebase are the intellectual property of <strong className="text-white">Abdul Rahim</strong>. 
+          You are permitted to freely use, deploy, and self-host this tracker for your personal university application tracking. 
+          Redistribution, removal of the author's copyright, re-branding, or commercial sale of this software or its derivatives without explicit written permission is strictly prohibited.
+        </p>
       </div>
 
       {/* Confirm Dialogs */}
